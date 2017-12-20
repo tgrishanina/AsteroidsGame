@@ -59,7 +59,7 @@ public void draw()
 }
 public void keyPressed() {
   if (key == '1') {
-    bob.accelerate(2.0);
+    bob.accelerate(1.5);
   }
   if (key == '2') {
     bob.turn(30);
