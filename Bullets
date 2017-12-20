@@ -1,8 +1,7 @@
-class Bullet extends Floater {
+class Bullets extends Floater {
   
-  public Bullet(Spaceship theShip){
+  public Bullets(Spaceship theShip){
     myColor = 255;
-    myStroke = 255;
     myCenterX = theShip.getX();
     myCenterY = theShip.getY();
     myPointDirection = theShip.getPointDirection();
@@ -49,22 +48,31 @@ class Bullet extends Floater {
    public void show ()  //Draws circle bullets
   {
     fill(myColor);
-    stroke(myStroke);
     ellipse( (float)myCenterX, (float)myCenterY, 6, 6);
    
   }
-public void move ()   //move the floater in the current direction of travel
+  public void move ()   //move the floater in the current direction of travel
   {
     //change the x and y coordinates by myDirectionX and myDirectionY
     myCenterX += myDirectionX;
     myCenterY += myDirectionY;
     if(myCenterX < 0)
       bullet.remove(this);
-    if(myCenterX > 750)
+    if(myCenterX > 300)
       bullet.remove(this);
     if (myCenterY < 0)
       bullet.remove(this);  
-    if (myCenterY >750)
+    if (myCenterY >300)
      bullet.remove(this);
+  }
+  public boolean collide1(int x, int y)
+  {
+    if(dist((int)myCenterX, (int)myCenterY, x, y) < 10)
+    {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 }
