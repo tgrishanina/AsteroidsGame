@@ -53,4 +53,8 @@ public void keyPressed() {
     bob.setX((int)(Math.random()*301));
     bob.setY((int)(Math.random()*301));
   }
+  if (keyCode == ' '){
+   
+      bullet.add(new Bullets(bob));
+    }
 }
