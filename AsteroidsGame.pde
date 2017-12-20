@@ -1,6 +1,7 @@
 Spaceship bob;
 Stars [] star;
 ArrayList <Asteroid> flyers;
+ArrayList <Bullet> bullets = new ArrayList <Bullet>();
 public void setup() 
 {
   size(300, 300);
@@ -30,6 +31,10 @@ public void draw()
      {
      flyers.remove(i);
      }
+     for (int i=0; i< bullets.size(); i++){
+      bullets.get(i).show();
+      bullets.get(i).move();
+      }
   }
    bob.move();
    bob.show();
