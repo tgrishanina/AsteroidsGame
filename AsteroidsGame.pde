@@ -48,6 +48,9 @@ public void draw()
      bullet.remove(j); 
      
      flyers.remove(i);
+     
+     
+     break;
      }
     }
    }
