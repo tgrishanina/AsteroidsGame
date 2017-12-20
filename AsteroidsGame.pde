@@ -1,13 +1,14 @@
 Spaceship bob;
 Stars [] star;
 ArrayList <Asteroid> flyers;
-ArrayList <Bullets> bullet = new ArrayList <Bullets>();
+ArrayList <Bullets> bullet;
 public void setup() 
 {
   size(300, 300);
   star = new Stars[250];
   bob = new Spaceship();
   flyers = new ArrayList <Asteroid>();
+  bullet = new ArrayList <Bullets>();
   for (int i = 0; i<10; i++)
   {
     flyers.add(i, new Asteroid());
@@ -31,11 +32,25 @@ public void draw()
      {
      flyers.remove(i);
      }
-     for (int i=0; i< bullet.size(); i++){
+  }
+    for (int i=0; i< bullet.size(); i++){
       bullet.get(i).show();
       bullet.get(i).move();
       }
-  }
+   for (int i=0; i< bullet.size(); i++){
+      bullet.get(i).show();
+      bullet.get(i).move();
+   }
+   for (int j=0; j< bullet.size(); j++){
+    for (int i=0; i< flyers.size(); i++){ 
+      if (bullet.get(j).collide1(flyers.get(i).getX(), flyers.get(i).getY()) == true)
+     {
+     bullet.remove(j); 
+     
+     flyers.remove(i);
+     }
+    }
+   }
    bob.move();
    bob.show();
 }
@@ -56,5 +71,5 @@ public void keyPressed() {
   if (keyCode == ' '){
    
       bullet.add(new Bullets(bob));
-    }
+   }
 }
