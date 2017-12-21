@@ -13,8 +13,8 @@ class Spaceship extends Floater
   public double getPointDirection(){return myPointDirection;}; 
  Spaceship(){
   corners = 4;
-  int[] xCor = {-3+10,-8+10,16+10,-8+10};
-  int[] yCor = {0+10,8+10,0+10,-8+10};
+  int[] xCor = {-3,-8,16,-8};
+  int[] yCor = {0,8,0,-8};
   xCorners = xCor;
   yCorners = yCor;
   myColor = 255;
