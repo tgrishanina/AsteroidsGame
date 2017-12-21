@@ -1,14 +1,14 @@
 Spaceship bob;
 Stars [] star;
 ArrayList <Asteroid> flyers;
-ArrayList <Bullets> bullet;
+ArrayList <Bullet> bullet;
 public void setup() 
 {
   size(300, 300);
   star = new Stars[250];
   bob = new Spaceship();
   flyers = new ArrayList <Asteroid>();
-  bullet = new ArrayList <Bullets>();
+  bullet = new ArrayList <Bullet>();
   for (int i = 0; i<10; i++)
   {
     flyers.add(i, new Asteroid());
@@ -73,10 +73,9 @@ public void keyPressed() {
   }
   if (keyCode == ' '){
    
-      bullet.add(new Bullets(bob));
+      bullet.add(new Bullet(bob));
    }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 764533345b071e5a9f764e835f1af6d00434e6b3
+
+
