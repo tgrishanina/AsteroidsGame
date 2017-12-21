@@ -75,4 +75,8 @@ public void keyPressed() {
    
       bullet.add(new Bullets(bob));
    }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 764533345b071e5a9f764e835f1af6d00434e6b3
